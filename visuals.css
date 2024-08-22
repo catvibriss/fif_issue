@@ -1,0 +1,23 @@
+body {
+    background-image: url('maphik.png');
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-color: #fdfcfc;
+  }
+.bix {
+    flex-direction: column;
+    margin-left: 1100px;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+.input-data {
+    text-align: center;
+}
+img{
+    height: 1%;
+    width: 1%;
+}
+.info1{
+    margin-top: 36%;
+    margin-left: 35.2%;
+}
