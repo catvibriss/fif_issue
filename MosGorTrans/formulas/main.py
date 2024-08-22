@@ -102,7 +102,7 @@ def search_by_id(id: int, data: Database) -> TransportObject | None:
         if element.id == id: return element
     return None
 
-if __name__ == '__main__':
+if __name__ == '__main__': # для тестов
     data = load_database()
     pprint(count_values(data))
     pprint(search_by_id(5, data))

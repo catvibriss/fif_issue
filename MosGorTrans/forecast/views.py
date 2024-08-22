@@ -8,10 +8,10 @@ def index(request):
         form = homeForm(request.POST)
         if form.is_valid():
             data = load_database()
-            print(data)
-            print(request.POST["apart"])
-            print(request.POST["flats"])
-            print(request.POST["office"])
+            data.appartaments.area = request.POST["apart"]
+            data.living.area = request.POST["flats"]
+            data.office.area = request.POST["office"]
+            save_database(data)
             return redirect("index")
         else:
             error = "Form is an invalid"
