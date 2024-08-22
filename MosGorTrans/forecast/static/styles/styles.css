@@ -1,3 +1,4 @@
+
 body{
     background-image: url('maphin.png');
     background-repeat: no-repeat;
@@ -7,18 +8,26 @@ body{
 .bix {
     justify-content: flex-end;
     display: flex;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 .textbox{
     background: rgba(55, 55, 55, 0.75);
     width: 100px;
     height: 25.84px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
 }
 .box1 {
     position: absolute;
-    transform: rotate(8.00deg);
     margin-left: 374.6px;
-    margin-top: 745px;
+    margin-top: 738px;
 }
 .box2 {
     position: absolute;
@@ -32,22 +41,35 @@ body{
 }
 .input-data {
     text-align: center;
-    font-family: Inter;
-}
-img{
-    height: 1%;
-    width: 1%;
+    font-family: Inter ;
 }
 .info1{
     margin-top: 36%;
     margin-left: 35.2%;
     font-family: Inter;
-
+}
+.balls{
+    height: 3%;
+}
+.ball1{
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 545px;
+}
+.ball2{
+    position: absolute;
+    margin-top: 738px;
+    margin-left: 479.6px;
+}
+.ball3{
+    position: absolute;
+    margin-top: 445px;
+    margin-left: 860px;
 }
 .maintitle{
     margin-top: 45px;
     color: rgb(0, 0, 0);
-font-family: Inter;
+font-family: Inter Black;
 font-size: 52px;
 font-weight: 900;
 line-height: 63px;
@@ -56,4 +78,5 @@ text-align: center;
 }
 .bub {
     flex-direction: column;
+    font-family: Inter;
 }

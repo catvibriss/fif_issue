@@ -3,13 +3,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 <html>
 <main>
     <body>
 		<div class="quads">
-			<div class="textbox box1"></div>
-			<div class="textbox box2"></div>
-			<div class="textbox box3"></div>
+			<div class="textbox box1">{{data.0.0.1}} ТС/ЧАС</div>
+			<div class="textbox box2">{{data.0.2.1}} ТС/ЧАС</div>
+			<div class="textbox box3">{{data.0.1.1}} ТС/ЧАС</div>
+			</div>
+			<div class="bali">
+			<img src="{% static 'images/3.png' %}" class="balls ball1">
+			<img src="{% static 'images/block.png' %}" class="balls ball2">
+			<img src="{% static 'images/8.png' %}" class="balls ball3">
 			</div>
         <div class="bix">
 				<div class="bub">
