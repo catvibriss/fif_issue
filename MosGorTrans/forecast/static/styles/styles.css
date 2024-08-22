@@ -7,7 +7,7 @@ body{
 .bix {
     justify-content: flex-end;
     display: flex;
-    margin-right: 150px;
+    margin-right: 40px;
 }
 .textbox{
     background: rgba(55, 55, 55, 0.75);
@@ -22,7 +22,6 @@ body{
 }
 .box2 {
     position: absolute;
-    transform: rotate(10.50deg);
     margin-top: 500px;
     margin-left: 440px;
 }
