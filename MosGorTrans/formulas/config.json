@@ -1,6 +1,6 @@
 {
     "appartaments": {
-        "area": 40000000,
+        "area": 14285715,
         "rate": 25
     },
     "auto_occupancy_rate": 1.2,
@@ -11,19 +11,19 @@
     "metro_stantions": [
         {
             "bandwidth": 16000,
-            "basic_traffic": 8.4,
+            "basic_traffic": 8400,
             "id": 4,
             "name": "Площадь Ильича"
         },
         {
             "bandwidth": 16000,
-            "basic_traffic": 4.6,
+            "basic_traffic": 4600,
             "id": 5,
             "name": "Римская"
         },
         {
             "bandwidth": 5000,
-            "basic_traffic": 1,
+            "basic_traffic": 1000,
             "id": 6,
             "name": "Серп и Молот"
         }

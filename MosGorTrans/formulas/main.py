@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import json
 from pprint import pprint
 
-DATABASE_FILE = "./MosGorTrans/formulas/config.json"
+DATABASE_FILE = "./formulas/config.json"
 
 @dataclass
 class PeakHourLoad:
