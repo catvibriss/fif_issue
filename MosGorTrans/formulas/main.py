@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import json
 from pprint import pprint
 
-DATABASE_FILE = "./formulas/config.json"
+DATABASE_FILE = "./MosGorTrans/formulas/config.json"
 
 @dataclass
 class PeakHourLoad:
@@ -65,7 +65,7 @@ def load_database() -> Database:
         data = json.load(file)
         return Database(**data)
 
-def save_config(new_dict: dict) -> None:
+def save_database(new_dict: dict) -> None:
     with open(DATABASE_FILE, "w", encoding="utf-8") as file:
         json.dump(new_dict, file, indent=4, sort_keys=True, ensure_ascii=False)
 
@@ -96,8 +96,16 @@ def count_values(config: Database) -> None:
         
     return output
 
-data = load_database()
-pprint(count_values(data))
+def search_by_id(id: int, data: Database) -> TransportObject | None:
+    elements = data.metro_stantions + data.roads
+    for element in elements:
+        if element.id == id: return element
+    return None
+
+if __name__ == '__main__':
+    data = load_database()
+    pprint(count_values(data))
+
 '''
 что значит вывод
 возвращается список из 4-ёх элементов:
@@ -110,4 +118,3 @@ pprint(count_values(data))
 3: общее кол-во машин
 4: общее кол-во людей на ОТ
 '''
-save_config(data.dict())
