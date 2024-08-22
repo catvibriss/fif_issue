@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import json
 from pprint import pprint
 
-DATABASE_FILE = "./MosGorTrans/formulas/config.json"
+DATABASE_FILE = "./formulas/config.json"
 
 @dataclass
 class PeakHourLoad:
@@ -76,8 +76,8 @@ def count_values(config: Database) -> None:
     office_peoples = config.office.area / config.office.rate * config.peak_hour_load.for_offices
     total_peoples = working_peoples + office_peoples
     
-    personal_transopt = total_peoples * config.personal_transport_rate / config.auto_occupancy_rate
-    social_transport = total_peoples - personal_transopt
+    social_transport = total_peoples * (1-config.personal_transport_rate) 
+    personal_transopt = (total_peoples - social_transport) / config.auto_occupancy_rate
 
     road_load = personal_transopt / len(config.roads)
     output = [[], [], round(personal_transopt), round(social_transport)]
@@ -90,10 +90,10 @@ def count_values(config: Database) -> None:
     metro_load = social_transport / len(config.metro_stantions)
 
     for metro in config.metro_stantions:
-        omt = metro_load + metro.basic_traffic*1000
+        omt = metro_load + metro.basic_traffic
         data = [metro.id, round(omt), True if omt <= metro.bandwidth else False]
         output[1].append(data)
-        
+
     return output
 
 def search_by_id(id: int, data: Database) -> TransportObject | None:
