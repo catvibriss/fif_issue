@@ -5,10 +5,14 @@
 <main>
     <body>
         <div class="bix">
-            <h1 class="maintitle">загаловок</h1>
-            <input class="input-data" type="text" placeholder="Жилая Площадь">
-            <input class="input-data" type="text" placeholder="Нежилая Площадь">
-            <h3 class="buttonch">расчитать</h3>
+			<form method="POST">
+				<h1 class="maintitle">загаловок</h1>
+				{% csrf_token %}
+				{{form.apart}}
+				{{form.flats}}
+				{{form.office}}
+				<button type="submit"> Submit </button>
+			</form>
         </div>
         <div class="infobutt">
 			<img src="{% static 'images/information-button.png' %}" class="info1">
