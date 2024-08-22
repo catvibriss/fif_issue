@@ -102,6 +102,12 @@ def search_by_id(id: int, data: Database) -> TransportObject | None:
         if element.id == id: return element
     return None
 
+def get_endword_by_plural(number: int) -> str:
+    if number in (11, 12, 13, 14): return 'ов'
+    elif number % 10 == 1: return ''
+    elif number % 10 in (2, 3, 4): return 'а'
+    return 'ов'
+
 if __name__ == '__main__': # для тестов
     data = load_database()
     pprint(count_values(data))
