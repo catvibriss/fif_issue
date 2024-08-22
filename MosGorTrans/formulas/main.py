@@ -112,7 +112,6 @@ if __name__ == '__main__': # для тестов
     data = load_database()
     pprint(count_values(data))
     
-
 '''
 что значит вывод
 возвращается список из 4-ёх элементов:
