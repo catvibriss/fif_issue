@@ -1,4 +1,4 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 import json
 from pprint import pprint
 
@@ -79,7 +79,7 @@ def count_values(config: Database) -> None:
     social_transport = total_peoples - personal_transopt
 
     road_load = personal_transopt / len(config.roads)
-    output = [[], [], personal_transopt, social_transport]
+    output = [[], [], round(personal_transopt), round(social_transport)]
 
     for road in config.roads:
         ort = road_load + road.basic_traffic
@@ -97,3 +97,4 @@ def count_values(config: Database) -> None:
 
 data = load_database()
 pprint(count_values(data))
+save_config(data.dict())
