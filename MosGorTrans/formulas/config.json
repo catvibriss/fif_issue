@@ -1,11 +1,11 @@
 {
     "appartaments": {
-        "area": 123,
+        "area": 150000,
         "rate": 45
     },
     "auto_occupancy_rate": 1.2,
     "living": {
-        "area": 456,
+        "area": 300000,
         "rate": 45
     },
     "metro_stantions": [
@@ -29,7 +29,7 @@
         }
     ],
     "office": {
-        "area": 7989,
+        "area": 214000,
         "rate": 35
     },
     "peak_hour_load": {

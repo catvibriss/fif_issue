@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import json
 from pprint import pprint
 
-DATABASE_FILE = "./formulas/config.json"
+DATABASE_FILE = "./MosGorTrans/formulas/config.json"
 
 @dataclass
 class PeakHourLoad:
@@ -90,8 +90,8 @@ def count_values(config: Database) -> None:
     metro_load = social_transport / len(config.metro_stantions)
 
     for metro in config.metro_stantions:
-        omt = metro_load / 1000 + metro.basic_traffic
-        data = [metro.id, round(omt, 1), True if omt <= metro.bandwidth else False]
+        omt = metro_load + metro.basic_traffic*1000
+        data = [metro.id, round(omt), True if omt <= metro.bandwidth else False]
         output[1].append(data)
         
     return output
@@ -105,7 +105,7 @@ def search_by_id(id: int, data: Database) -> TransportObject | None:
 if __name__ == '__main__': # для тестов
     data = load_database()
     pprint(count_values(data))
-    pprint(search_by_id(5, data))
+    
 
 '''
 что значит вывод
