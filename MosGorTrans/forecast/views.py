@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import homeForm
+from formulas import *
 
 def index(request):
     error = ""
     if request.method == "POST":
         form = homeForm(request.POST)
         if form.is_valid():
-            form.save()
+            data = load_database()
+            print(data)
             return redirect("index")
         else:
             error = "Form is an invalid"
