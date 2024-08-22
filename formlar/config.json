@@ -1,10 +1,10 @@
 {
     "working_capacity": 0.57,
-    "metro_stantions": 3,
-    "roads": [50, 100, 150],
-    "roads_count": 3,
-    "living_area": 190000,
-    "office_area": 190000,
+    "metro_stantions": [],
+    "roads": [],
+    "living": {"area": 190000, "rate": 45},
+    "office": {"area": 210000, "rate": 35},
+    "appartaments": {"area": 190000, "rate": 45},
     "peak_hour_load": {"for_offices": 0.35, "for_residents": 0.10},
     "auto_occupancy_rate": 1.2,
     "personal_transport_rate": 0.3
