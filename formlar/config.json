@@ -1,6 +1,6 @@
 {
     "appartaments": {
-        "area": 190000,
+        "area": 0,
         "rate": 45
     },
     "auto_occupancy_rate": 1.2,
@@ -8,7 +8,14 @@
         "area": 190000,
         "rate": 45
     },
-    "metro_stantions": [],
+    "metro_stantions": [
+        {
+            "bandwidth": 16,
+            "basic_traffic": 8.4,
+            "id": 4,
+            "name": "Площадь Ильича"
+        }
+    ],
     "office": {
         "area": 210000,
         "rate": 35
@@ -21,21 +28,21 @@
     "roads": [
         {
             "bandwidth": 50,
+            "basic_traffic": 150,
             "id": 1,
-            "name": "Гжельский переулок",
-            "object_type": "road"
+            "name": "Гжельский переулок"
         },
         {
             "bandwidth": 60,
+            "basic_traffic": 300,
             "id": 2,
-            "name": "Золоторожский вал",
-            "object_type": "road"
+            "name": "Золоторожский вал"
         },
         {
             "bandwidth": 342.85,
+            "basic_traffic": 2400,
             "id": 3,
-            "name": "улица Сергея Радонежского",
-            "object_type": "road"
+            "name": "улица Сергея Радонежского"
         }
     ],
     "working_capacity": 0.57

@@ -16,12 +16,12 @@ class PeakHourLoad:
 class TransportObject:
     id: int
     name: str
-    object_type: str
+    basic_traffic: float
     bandwidth: float
 
     def dict(self) -> dict:
         return self.__dict__
-
+    
 @dataclass 
 class AreaObject:
     area: int
@@ -70,8 +70,30 @@ def save_config(new_dict: dict) -> None:
         json.dump(new_dict, file, indent=4, sort_keys=True, ensure_ascii=False)
 
 def count_values(config: Database) -> None:
+    living_peoples = config.living.area / config.living.rate + config.appartaments.area / config.appartaments.rate
+    working_peoples = living_peoples * config.working_capacity
+    office_peoples = config.office.area / config.office.rate
+    total_peoples = working_peoples + office_peoples
     
+    personal_transopt = total_peoples * config.personal_transport_rate / config.auto_occupancy_rate
+    social_transport = total_peoples - personal_transopt
+
+    road_load = personal_transopt / len(config.roads)
+    output = [[], [], personal_transopt, social_transport]
+
+    for road in config.roads:
+        ort = road_load + road.basic_traffic
+        data = [road.id, round(ort), round(ort/road.bandwidth)]
+        output[0].append(data)
+
+    metro_load = social_transport / len(config.metro_stantions)
+
+    for metro in config.metro_stantions:
+        omt = metro_load / 1000 + metro.basic_traffic
+        data = [metro.id, round(omt), True if omt <= metro.bandwidth else False]
+        output[1].append(data)
+        
+    return output
 
 data = load_database()
-save_config(data.dict())
-count_values(data)
+pprint(count_values(data))
