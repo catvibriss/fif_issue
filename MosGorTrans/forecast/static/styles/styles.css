@@ -1,4 +1,4 @@
-body {
+body{
     background-image: url('maphik.png');
     background-repeat: no-repeat;
     background-size: 70%;
@@ -10,6 +10,9 @@ body {
     flex-wrap: nowrap;
     text-align: center;
 }
+.tetx {
+
+}
 .input-data {
     text-align: center;
 }
@@ -20,4 +23,14 @@ img{
 .info1{
     margin-top: 36%;
     margin-left: 35.2%;
+}
+.maintitle{
+    margin-top: 45px;
+    color: rgb(0, 0, 0);
+font-family: Inter;
+font-size: 52px;
+font-weight: 900;
+line-height: 63px;
+letter-spacing: 0%;
+text-align: center;
 }

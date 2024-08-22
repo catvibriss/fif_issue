@@ -5,18 +5,19 @@
 <main>
     <body>
         <div class="bix">
-			<form method="POST">
-				<h1 class="maintitle">загаловок</h1>
+			<form method="POST" class="bub">
+				<h1 class="maintitle">fif_issue</h1>
 				{% csrf_token %}
+				<p class="tetx">Апартаменты</p>
 				{{form.apart}}
+				<p class="tetx">Квартиры</p>
 				{{form.flats}}
+				<p class="tetx">Офисы</p>
 				{{form.office}}
 				<button type="submit"> Submit </button>
 			</form>
         </div>
-        <div class="infobutt">
-			<img src="{% static 'images/information-button.png' %}" class="info1">
-        </div>
+		<img src="{% static 'images/information-button.png' %}" class="info">
     </body>
 </main>
 </html>
