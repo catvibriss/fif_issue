@@ -80,9 +80,9 @@ def count_values(config: Database) -> None:
     personal_transopt = (total_peoples - social_transport) / config.auto_occupancy_rate
 
     road_load = personal_transopt / len(config.roads)
-    output = [[], [], round(personal_transopt), round(social_transport)]
+    output = [[], [], round(personal_transopt), round(social_transport), round(total_peoples)]
 
-    for road in config.roads:
+    for road in config.roads: 
         ort = road_load + road.basic_traffic
         data = [road.id, round(ort), round(ort/road.bandwidth)]
         output[0].append(data)
@@ -118,4 +118,5 @@ if __name__ == '__main__': # для тестов
 - в каждом подсписке три элемента: id, трафик (тыс.чел./час), доступность станции (False - перегружена, True - нормально)
 3: общее кол-во машин
 4: общее кол-во людей на ОТ
+5: общее кол-во людей в потоке
 '''
