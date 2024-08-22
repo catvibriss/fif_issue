@@ -8,7 +8,6 @@ class homeForm(ModelForm):
         widgets = { 
             "apart":TextInput(attrs={  
                 "class":"form-control",
-                "placeholder":"enter the name",
                 "type":"number",
             }),
             "flats":TextInput(attrs={  
@@ -17,7 +16,6 @@ class homeForm(ModelForm):
             }),
             "office":TextInput(attrs={
                 "class":"form-control",
-                "placeholder":"enter the description",
                 "type":"number",
             }),
         }

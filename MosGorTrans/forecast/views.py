@@ -9,6 +9,9 @@ def index(request):
         if form.is_valid():
             data = load_database()
             print(data)
+            print(request.POST["apart"])
+            print(request.POST["flats"])
+            print(request.POST["office"])
             return redirect("index")
         else:
             error = "Form is an invalid"
