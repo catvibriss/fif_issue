@@ -8,7 +8,6 @@ def index(request):
         form = homeForm(request.POST)
         if form.is_valid():
             data = load_database()
-            print(data)
             return redirect("index")
         else:
             error = "Form is an invalid"
