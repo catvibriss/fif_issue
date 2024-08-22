@@ -91,7 +91,7 @@ def count_values(config: Database) -> None:
 
     for metro in config.metro_stantions:
         omt = metro_load / 1000 + metro.basic_traffic
-        data = [metro.id, round(omt), True if omt <= metro.bandwidth else False]
+        data = [metro.id, round(omt, 1), True if omt <= metro.bandwidth else False]
         output[1].append(data)
         
     return output
@@ -105,16 +105,17 @@ def search_by_id(id: int, data: Database) -> TransportObject | None:
 if __name__ == '__main__':
     data = load_database()
     pprint(count_values(data))
+    pprint(search_by_id(5, data))
 
 '''
 что значит вывод
 возвращается список из 4-ёх элементов:
 1: список с дорогами
 - один элемент - одна дорога
-- в каждом подсписке дорог три элемента: id, трафик (тс/час), баллы пробок (в таком порядке)
+- в каждом подсписке дорог три элемента: id, трафик (транспортные средства/час), баллы пробок (в таком порядке)
 2: список со станциями
 - один элемент - одна станция
-- в каждом подсписке три элемента: id, трафик (человек/час), доступность станции (False - перегружена, True - нормально)
+- в каждом подсписке три элемента: id, трафик (тыс.чел./час), доступность станции (False - перегружена, True - нормально)
 3: общее кол-во машин
 4: общее кол-во людей на ОТ
 '''
