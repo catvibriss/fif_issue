@@ -11,14 +11,21 @@ def index(request):
             data.appartaments.area = int(request.POST["apart"])
             data.living.area = int(request.POST["flats"])
             data.office.area = int(request.POST["office"])
+            ndata = count_values(config=data)
+            context = {
+                "data":ndata,
+            }
             save_database(data.dict())
-            return redirect("index")
+            return redirect('index')
         else:
             error = "Form is an invalid"
 
     form = homeForm()
+    data = load_database()
+    ndata = count_values(config=data)
     context = {
         "form":form,
         "error": error,
+        "data": ndata,
     }
     return render(request, "forecast/index.html", context)

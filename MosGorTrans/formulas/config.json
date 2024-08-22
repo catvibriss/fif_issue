@@ -1,35 +1,35 @@
 {
     "appartaments": {
-        "area": 150000,
+        "area": 123456789,
         "rate": 45
     },
     "auto_occupancy_rate": 1.2,
     "living": {
-        "area": 300000,
+        "area": 123456789,
         "rate": 45
     },
     "metro_stantions": [
         {
-            "bandwidth": 16,
+            "bandwidth": 16000,
             "basic_traffic": 8.4,
             "id": 4,
             "name": "Площадь Ильича"
         },
         {
-            "bandwidth": 16,
+            "bandwidth": 16000,
             "basic_traffic": 4.6,
             "id": 5,
             "name": "Римская"
         },
         {
-            "bandwidth": 5,
+            "bandwidth": 5000,
             "basic_traffic": 1,
             "id": 6,
             "name": "Серп и Молот"
         }
     ],
     "office": {
-        "area": 214000,
+        "area": 123456789,
         "rate": 35
     },
     "peak_hour_load": {
