@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import json
 from pprint import pprint
 
-DATABASE_FILE = "./formlar/config.json"
+DATABASE_FILE = "./formulas/config.json"
 
 @dataclass
 class PeakHourLoad:
@@ -71,8 +71,9 @@ def save_config(new_dict: dict) -> None:
 
 def count_values(config: Database) -> None:
     living_peoples = config.living.area / config.living.rate + config.appartaments.area / config.appartaments.rate
-    working_peoples = living_peoples * config.working_capacity
-    office_peoples = config.office.area / config.office.rate
+    
+    working_peoples = living_peoples * config.working_capacity * config.peak_hour_load.for_residents
+    office_peoples = config.office.area / config.office.rate * config.peak_hour_load.for_offices
     total_peoples = working_peoples + office_peoples
     
     personal_transopt = total_peoples * config.personal_transport_rate / config.auto_occupancy_rate

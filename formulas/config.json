@@ -14,6 +14,18 @@
             "basic_traffic": 8.4,
             "id": 4,
             "name": "Площадь Ильича"
+        },
+        {
+            "bandwidth": 16,
+            "basic_traffic": 4.6,
+            "id": 5,
+            "name": "Римская"
+        },
+        {
+            "bandwidth": 5,
+            "basic_traffic": 1,
+            "id": 6,
+            "name": "Серп и Молот"
         }
     ],
     "office": {
