@@ -2,19 +2,38 @@ body{
     background-image: url('maphik.png');
     background-repeat: no-repeat;
     background-size: 70%;
-    background-color: #fdfcfc;
+    background-color: #F7f7f7;
   }
 .bix {
-    flex-direction: column;
-    margin-left: 1100px;
-    flex-wrap: nowrap;
-    text-align: center;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 150px;
 }
-.tetx {
-
+.textbox{
+    background: rgba(55, 55, 55, 0.75);
+    width: 100px;
+    height: 25.84px;
+}
+.box1 {
+    position: absolute;
+    transform: rotate(8.00deg);
+    margin-left: 374.6px;
+    margin-top: 745px;
+}
+.box2 {
+    position: absolute;
+    transform: rotate(10.50deg);
+    margin-top: 500px;
+    margin-left: 440px;
+}
+.box3 {
+    position: absolute;
+    margin-top: 445px;
+    margin-left: 755px;
 }
 .input-data {
     text-align: center;
+    font-family: Inter;
 }
 img{
     height: 1%;
@@ -23,6 +42,8 @@ img{
 .info1{
     margin-top: 36%;
     margin-left: 35.2%;
+    font-family: Inter;
+
 }
 .maintitle{
     margin-top: 45px;
@@ -33,4 +54,7 @@ font-weight: 900;
 line-height: 63px;
 letter-spacing: 0%;
 text-align: center;
+}
+.bub {
+    flex-direction: column;
 }

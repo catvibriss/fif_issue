@@ -1,11 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
 <html>
 <main>
     <body>
+		<div class="quads">
+			<div class="textbox box1"></div>
+			<div class="textbox box2"></div>
+			<div class="textbox box3"></div>
+			</div>
         <div class="bix">
-			<form method="POST" class="bub">
+				<div class="bub">
+				<form method="POST">
 				<h1 class="maintitle">fif_issue</h1>
 				{% csrf_token %}
 				<p class="tetx">Апартаменты</p>
@@ -15,9 +23,14 @@
 				<p class="tetx">Офисы</p>
 				{{form.office}}
 				<button type="submit"> Submit </button>
-			</form>
-        </div>
-		<img src="{% static 'images/information-button.png' %}" class="info">
+				<h2 class="infotext">Информация</h2>
+				<p>Общий поток: 123456 чел/час</p>
+				<p>Общественный транспорт: 12345 чел/час</p>
+				<p>Индивидуальный транспорт: 1234 тс/час</p>
+			</form> 
+
+			</div>
+		</div>
     </body>
 </main>
 </html>
