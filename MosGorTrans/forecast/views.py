@@ -29,3 +29,8 @@ def index(request):
         "data": ndata,
     }
     return render(request, "forecast/index.html", context)
+
+def delete(request):
+    data = load_database()
+    clear_all_values(data)
+    return redirect("index")
