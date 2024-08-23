@@ -84,7 +84,8 @@ def count_values(config: Database) -> None:
 
     for road in config.roads: 
         ort = road_load + road.basic_traffic
-        persent = ort / road.bandwidth*10 * 100
+        persent = (round(ort) / road.bandwidth*10)
+        print(ort, road.bandwidth*10, persent)
         data = [road.id, round(ort), round(ort/road.bandwidth), round(persent, 2)]
         output[0].append(data)
 
