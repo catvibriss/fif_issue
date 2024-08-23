@@ -23,6 +23,12 @@ def index(request):
     form = homeForm()
     data = load_database()
     ndata = count_values(config=data)
+    if ndata[0][0][2] > 10:
+        ndata[0][0][2] = 11
+    if ndata[0][1][2] > 10:
+        ndata[0][1][2] = 11
+    if ndata[0][2][2] > 10:
+        ndata[0][2][2] = 11
     context = {
         "form":form,
         "error": error,
