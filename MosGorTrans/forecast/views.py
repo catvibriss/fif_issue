@@ -8,9 +8,9 @@ def index(request):
         form = homeForm(request.POST)
         if form.is_valid():
             data = load_database()
-            data.appartaments.area = int(request.POST["apart"])
-            data.living.area = int(request.POST["flats"])
-            data.office.area = int(request.POST["office"])
+            data.appartaments.area = data.appartaments.area+int(request.POST["apart"])
+            data.living.area = data.living.area+int(request.POST["flats"])
+            data.office.area = data.office.area+int(request.POST["office"])
             ndata = count_values(config=data)
             context = {
                 "data":ndata,
