@@ -8,20 +8,20 @@ class homeForm(ModelForm):
         widgets = { 
             "apart":TextInput(attrs={  
                 "class":"form-control",
-                "placeholder":"м²",
+                "placeholder":"добавить м²",
                 "type":"number",
                 "text-align":"center",
 
             }),
             "flats":TextInput(attrs={  
                 "class":"form-control",
-                "placeholder":"м²",
+                "placeholder":"добавить м²",
                 "type":"number",
                 "text-align":"center",
             }),
             "office":TextInput(attrs={
                 "class":"form-control",
-                "placeholder":"м²",
+                "placeholder":"добавить м²",
                 "type":"number",
                 "text-align":"center",
 

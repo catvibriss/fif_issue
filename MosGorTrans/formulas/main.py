@@ -69,6 +69,9 @@ def save_database(new_dict: dict) -> None:
     with open(DATABASE_FILE, "w", encoding="utf-8") as file:
         json.dump(new_dict, file, indent=4, sort_keys=True, ensure_ascii=False)
 
+def local_map(x, inmin, inmax, tomin, tomax) -> float:
+    return (x-inmin)*(tomax-tomin) / (inmax-inmin)+tomin
+
 def count_values(config: Database) -> None:
     living_peoples = config.living.area / config.living.rate + config.appartaments.area / config.appartaments.rate
     
@@ -85,8 +88,8 @@ def count_values(config: Database) -> None:
     for road in config.roads: 
         ort = road_load + road.basic_traffic
         persent = (round(ort) / road.bandwidth*10)
-        print(ort, road.bandwidth*10, persent)
-        data = [road.id, round(ort), round(ort/road.bandwidth), round(persent, 2)]
+        ball = round(local_map(persent, 0, 99, 0, 10)) if persent < 100 else 11
+        data = [road.id, round(ort), ball, round(persent, 2)]
         output[0].append(data)
 
     metro_load = social_transport / len(config.metro_stantions)
