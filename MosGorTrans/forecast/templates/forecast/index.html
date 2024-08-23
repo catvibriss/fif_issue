@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
 <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
 <html>
 <main>
     <body>
@@ -33,10 +34,27 @@
 				<p>Общий поток: {{data.4}} чел/час</p>
 				<p>Общественный транспорт: {{data.3}} чел/час</p>
 				<p>Индивидуальный транспорт: {{data.2}} тс/час
+
 				<p><b>Загруженность станций</b></p>
-				<p>Серп и Молот - {{data.1.2.1}} чел/час</p>
-				<p>Римская - {{data.1.1.1}} чел/час</p>
-				<p>Площадь Ильича - {{data.1.0.1}} чел/час</p>
+				<p>
+				{% if not data.1.2.2 %}
+					<i class="fa-solid fa-exclamation" style="color:red; width:20px; height:20px; vertical-align:middle; margin-right:0px;"></i>
+				{% endif %}
+				Серп и Молот - {{ data.1.2.1 }} чел/час
+				</p>
+				<p>
+				{% if not data.1.1.2 %}
+					<i class="fa-solid fa-exclamation" style="color:red; width:20px; height:20px; vertical-align:middle; margin-right:2px;"></i>
+				{% endif %}
+				Римская - {{ data.1.1.1 }} чел/час
+				</p>
+				<p>
+				{% if not data.1.0.2 %}
+					<i class="fa-solid fa-exclamation" style="color:red; width:20px; height:20px; vertical-align:middle; margin-right:2px;"></i>
+				{% endif %}
+				Площадь Ильича - {{ data.1.0.1 }} чел/час
+				</p>					
+
 				<p><b>Загруженность улиц</b></p>
 				<p>Гжельский переулок - {{data.0.0.1}} тс/час ({{data.0.0.2}} балла)</p>
 				<p>Золоторожский вал - {{data.0.1.1}} тс/час ({{data.0.1.2}} баллов)</p>
