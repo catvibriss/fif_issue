@@ -110,6 +110,12 @@ def get_endword_by_plural(number: int) -> str:
     elif number % 10 in (2, 3, 4): return 'а'
     return 'ов'
 
+def clear_all_values(config: Database) -> None:
+    config.appartaments.area = 0
+    config.living.area = 0
+    config.office.area = 0
+    save_database(config.dict())
+
 if __name__ == '__main__': # для тестов
     data = load_database()
     pprint(count_values(data))
