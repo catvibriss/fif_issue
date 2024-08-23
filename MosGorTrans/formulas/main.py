@@ -84,14 +84,16 @@ def count_values(config: Database) -> None:
 
     for road in config.roads: 
         ort = road_load + road.basic_traffic
-        data = [road.id, round(ort), round(ort/road.bandwidth)]
+        persent = ort / road.bandwidth*10 * 100
+        data = [road.id, round(ort), round(ort/road.bandwidth), round(persent, 2)]
         output[0].append(data)
 
     metro_load = social_transport / len(config.metro_stantions)
 
     for metro in config.metro_stantions:
         omt = metro_load + metro.basic_traffic
-        data = [metro.id, round(omt), True if omt <= metro.bandwidth else False]
+        persent = omt / metro.bandwidth * 100
+        data = [metro.id, round(omt), True if omt <= metro.bandwidth else False, round(persent, 2)]
         output[1].append(data)
 
     return output
