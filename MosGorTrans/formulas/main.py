@@ -116,6 +116,9 @@ def clear_all_values(config: Database) -> None:
     config.office.area = 0
     save_database(config.dict())
 
+def get_all_areas(config: Database) -> list:
+    return [config.appartaments.area, config.living.area, config.office.area]
+
 if __name__ == '__main__': # для тестов
     data = load_database()
     pprint(count_values(data))
