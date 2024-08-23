@@ -15,7 +15,7 @@
 			<div class="textbox box3">{{data.0.1.1}} ТС/ЧАС</div>
 			</div>
 			<div class="bali">
-			<img src="{% static 'images/3.png' %}" class="balls ball1">
+			<img src="{% static 'images/3.png' %}" class="balls ball1" id="ballik">
 			<img src="{% static 'images/block.png' %}" class="balls ball2">
 			<img src="{% static 'images/8.png' %}" class="balls ball3">
 			</div>
@@ -30,7 +30,10 @@
 				{{form.flats}}
 				<p class="tetx">Офисы</p>
 				{{form.office}}
-				<button type="submit"> Рассчитать </button>
+				<div>
+				<button type="submit" class="butt knopka"> Рассчитать </button>
+				<button type="submit" class="butt knopka2"> Очистить </button>
+				</div>
 				<h2 class="infotext">Информация</h2>
 				<p>Общий поток: {{data.4}} чел/час</p>
 				<p>Общественный транспорт: {{data.3}} чел/час</p>
@@ -39,19 +42,19 @@
 				<p><b>Загруженность станций</b></p>
 				<p>
 				{% if not data.1.2.2 %}
-					<i class="fa-solid fa-exclamation" style="color:red; width:20px; height:20px; vertical-align:middle; margin-right:0px;"></i>
+					<img src="{% static 'images/warning.png' %}">
 				{% endif %}
 				Серп и Молот - {{ data.1.2.1 }} чел/час
 				</p>
 				<p>
 				{% if not data.1.1.2 %}
-					<i class="fa-solid fa-exclamation" style="color:red; width:20px; height:20px; vertical-align:middle; margin-right:2px;"></i>
+					<img src="{% static 'images/warning.png' %}">
 				{% endif %}
 				Римская - {{ data.1.1.1 }} чел/час
 				</p>
 				<p>
 				{% if not data.1.0.2 %}
-					<i class="fa-solid fa-exclamation" style="color:red; width:20px; height:20px; vertical-align:middle; margin-right:2px;"></i>
+					<img src="{% static 'images/warning.png' %}">
 				{% endif %}
 				Площадь Ильича - {{ data.1.0.1 }} чел/час
 				</p>					

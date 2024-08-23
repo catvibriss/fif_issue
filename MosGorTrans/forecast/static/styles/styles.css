@@ -8,7 +8,24 @@ body{
 .bix {
     justify-content: flex-end;
     display: flex;
-    margin-right: 20px;
+}
+.butt{
+    border-radius: 10px;
+    position: absolute;
+    width: 165px;
+    height: 38px;
+    margin-top: 15px;
+}
+.knopka {
+    color: white;
+    background-color: #23ad2f !important;
+    border: solid #23ad2f;
+    border-radius: 10px;
+    margin-left: 185px;
+}
+.knopka1{
+    border: 1.5px solid;
+    box-sizing: border-box;
 }
 .textbox{
     background: rgba(55, 55, 55, 0.75);
@@ -48,6 +65,9 @@ body{
     margin-left: 35.2%;
     font-family: Inter;
 }
+.infotext{
+    margin-top: 65px;
+}
 .balls{
     height: 3%;
 }
@@ -67,16 +87,15 @@ body{
     margin-left: 860px;
 }
 .maintitle{
-    margin-top: 45px;
+    margin-top: 10px;
     color: rgb(0, 0, 0);
 font-family: Inter Black;
 font-size: 52px;
 font-weight: 900;
-line-height: 63px;
+line-height: 53px;
 letter-spacing: 0%;
 text-align: center;
 }
 .bub {
-    flex-direction: column;
     font-family: Inter;
 }
