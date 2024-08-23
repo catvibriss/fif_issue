@@ -10,8 +10,8 @@
 <main>
     <body>
 		<div class="quads">
-			<div class="textbox box1">{{data.0.0.1}} ТС/ЧАС</div>
-			<div class="textbox box2">{{data.0.2.1}} ТС/ЧАС</div>
+			<div class="textbox box1">{{data.0.2.1}} ТС/ЧАС</div>
+			<div class="textbox box2">{{data.0.0.1}} ТС/ЧАС</div>
 			<div class="textbox box3">{{data.0.1.1}} ТС/ЧАС</div>
 			</div>
 			<div class="bali">
@@ -20,37 +20,37 @@
 			<img src="{% static 'images/8.png' %}" class="balls ball3" id="b3">
 			</div>
 			<script>
-				function changeImage(n, id) {
+				function changeImage(id) {
 					let item = document.getElementById(id);
 					item.src = "{% static 'images/' %}{{data.0.0.2}}.png";
 					console.log(item);
 				}
-				function changeImage2(n, id) {
+				function changeImage2(id) {
 					let item = document.getElementById(id);
 					item.src = "{% static 'images/' %}{{data.0.1.2}}.png";
 					console.log(item);
 				}
-				function changeImage3(n, id) {
+				function changeImage3(id) {
 					let item = document.getElementById(id);
 					item.src = "{% static 'images/' %}{{data.0.2.2}}.png";
 					console.log(item);
 				}
-				changeImage(n={{data.0.0.2}}, id="b1");
-				changeImage2(n={{data.0.1.2}}, id="b3");
-				changeImage3(n={{data.0.2.2}}, id="b2");
+				changeImage(id="b1");
+				changeImage2(id="b3");
+				changeImage3(id="b2");
 			</script>
         <div class="bix">
 				<div class="bub">
 				<form method="POST">
 				<h1 class="maintitle">project_fif</h1>
 				{% csrf_token %}
-				<p class="tetx">Апартаменты</p>
+				<p class="tetx">Апартаменты - {{ data.5 }} м²</p>
 				{{form.apart}}
-				<p class="tetx">Квартиры</p>
+				<p class="tetx">Квартиры - {{ data.6 }} м²</p>
 				{{form.flats}}
-				<p class="tetx">Офисы</p>
+				<p class="tetx">Офисы - {{ data.7 }} м²</p>
 				{{form.office}}
-				<div>
+				<div> 
 				<button type="submit" class="butt knopka"> Рассчитать </button>
 				<button onclick="location.href='delete'" class="butt knopka2"> Очистить </button>
 				</div>

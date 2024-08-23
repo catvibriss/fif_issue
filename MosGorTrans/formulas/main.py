@@ -80,7 +80,7 @@ def count_values(config: Database) -> None:
     personal_transopt = (total_peoples - social_transport) / config.auto_occupancy_rate
 
     road_load = personal_transopt / len(config.roads)
-    output = [[], [], round(personal_transopt), round(social_transport), round(total_peoples)]
+    output = [[], [], round(personal_transopt), round(social_transport), round(total_peoples), config.appartaments.area, config.living.area, config.office.area]
 
     for road in config.roads: 
         ort = road_load + road.basic_traffic
